@@ -34,7 +34,8 @@ class SearchPage extends Page {
     }
 
     async getLinkOfSecondResult () {
-        await this.secondResult.waitForDisplayed(10000);
+        await $("div #search").waitForExist(10000);
+        await this.secondResult.waitForExist(10000);
         return await this.secondResult.getAttribute('href');
     }
 
